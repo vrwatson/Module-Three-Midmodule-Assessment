@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import CheckoutForm from "./Components/CheckoutForm";
 import ProductList from "./Components/ProductList";
 import ShoppingCart from "./Components/ShoppingCart";
 import productData from "./data/productData";
@@ -30,6 +31,7 @@ class App extends React.Component {
     return (
       <div>
         <ShoppingCart productInfo={productInfo} tax={tax || 0} subtotal={subtotal || 0} total={total || 0} />
+        <CheckoutForm total={total || 0} />
         <ProductList productdata={productData} addToShoppingCart={this.addToShoppingCart}/>
       </div>
     );
