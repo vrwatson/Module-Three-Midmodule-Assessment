@@ -1,7 +1,17 @@
+import React from "react";
 import "./App.css";
+import ProductList from "./Components/ProductList";
+import productData from "./data/productData";
 
-const App = () => {
-  return <h1>Hello, world!</h1>;
-};
+class App extends React.Component {
+
+  render() {
+    return (
+      <ProductList productdata={productData} />
+    )
+  }
+
+}
+
 
 export default App;
