@@ -2,12 +2,12 @@ import React from "react";
 import ProductCard from "./ProductCard";
 import productData from "../data/productData";
 
-const ProductList = () => {
+const ProductList = ({ addToShoppingCart }) => {
     return (
         <div>
             {productData.map((product) => {
                 return (
-                    <ProductCard product={product} />
+                    <ProductCard product={product} addToShoppingCart={addToShoppingCart}/>
                 )
             })}
         </div>

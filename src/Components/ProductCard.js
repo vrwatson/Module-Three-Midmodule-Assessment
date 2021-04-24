@@ -3,15 +3,15 @@ import React from "react";
 
 
 const ProductCard = (props) => {
-    const product = props;
-    // debugger;
+    const { product, addToShoppingCart } = props;
+    
     return(
         <div>
-            <h3>{product.product.name}</h3>
-            <p>Price: ${product.product.price.toFixed((2))} </p>
-            <button>Add To Cart</button>
-            <img src={product.product.img} alt="Colored square containing product name"></img>
-            <p>{product.product.description}</p>
+            <h3>{product.name}</h3>
+            <p>Price: ${product.price.toFixed((2))} </p>
+            <button onClick={() => addToShoppingCart({product})}>Add To Cart</button>
+            <img src={product.img} alt="Colored square containing product name"></img>
+            <p>{product.description}</p>
         </div>
     )
 }
