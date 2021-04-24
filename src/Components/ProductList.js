@@ -2,21 +2,25 @@ import React from "react";
 import ProductCard from "./ProductCard";
 import productData from "../data/productData";
 
-import "./ProductList.css"
+import "./ProductList.css";
 
 const ProductList = ({ addToShoppingCart }) => {
-    return (
-        <div>
-            <h2>My Garage Sale</h2>
-            <div className="Products">
-            {productData.map((product) => {
-                return (
-                    <ProductCard key={product.id} product={product} addToShoppingCart={addToShoppingCart}/>
-                )
-            })}
-            </div>
-        </div>
-    )
-}
+  return (
+    <div className="garageSale">
+      <h2>My Garage Sale</h2>
+      <ul className="Products">
+        {productData.map((product) => {
+          return (
+            <ProductCard
+              key={product.id}
+              product={product}
+              addToShoppingCart={addToShoppingCart}
+            />
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
 
 export default ProductList;

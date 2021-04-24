@@ -9,10 +9,11 @@
 }
 
 
-body {
+.app {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
         "gs sc"
-        "gs co";
+        "gs co"
+        "gs . ";
 }

@@ -16,23 +16,28 @@ class App extends React.Component {
 
   render() {
     const { productInfo } = this.state;
-    console.log(productInfo);
 
     let subtotal = 0;
     let tax = 0;
     let total = 0;
     productInfo.forEach((product) => (subtotal += product.product.price));
-    tax = subtotal * 0.050;
+    tax = subtotal * 0.05;
     total = subtotal + tax;
 
-    console.log(subtotal)
-    console.log(tax)
-    console.log(total)
     return (
       <div className="app">
-        <ProductList productdata={productData} addToShoppingCart={this.addToShoppingCart} className="garageSale"/>
-        <ShoppingCart productInfo={productInfo} tax={tax || 0} subtotal={subtotal || 0} total={total || 0} className="shoppingCart"/>
-        <CheckoutForm total={total || 0} className="checkout"/>
+        <ProductList
+          productdata={productData}
+          addToShoppingCart={this.addToShoppingCart}
+          className="garageSale"
+        />
+        <ShoppingCart
+          productInfo={productInfo}
+          tax={tax || 0}
+          subtotal={subtotal || 0}
+          total={total || 0}
+        />
+        <CheckoutForm total={total || 0} className="checkout" />
       </div>
     );
   }

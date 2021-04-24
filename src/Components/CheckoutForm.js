@@ -1,38 +1,37 @@
 import { Component } from "react";
 
 export default class CheckoutForm extends Component {
-    state = { firstName: "", lastName: "", email: "", creditCard: "" , zip: ""};
+  state = { firstName: "", lastName: "", email: "", creditCard: "", zip: "" };
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-        const { total } = this.props;
-        const { firstName, lastName, email, creditCard, zip } = this.state;
-        if (!firstName || !lastName || !email) {
-          debugger;
-          window.alert(`Input is not valid`);
-        } else if (creditCard.length !== 16) {
-          window.alert(`Credit card number is not valid`);
-        } else if (zip.length !== 5) {
-          window.alert(`Input is not valid.
-          Zip code is not valid`);
-        } else {
-          window.alert(`Yay! Purchase complete! You will be charged $${total.toFixed(2)}.`);
-        }
-      };
-
-
-    handleChange = (e) => {
-        const { name, value } = e.target;
-        this.setState({ [name]: value });
-      };
-
-
-    render() {
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { total } = this.props;
     const { firstName, lastName, email, creditCard, zip } = this.state;
-    console.log(this.state);
+    if (!firstName || !lastName || !email) {
+      debugger;
+      window.alert(`Input is not valid`);
+    } else if (creditCard.length !== 16) {
+      window.alert(`Credit card number is not valid`);
+    } else if (zip.length !== 5) {
+      window.alert(`Input is not valid.
+          Zip code is not valid`);
+    } else {
+      window.alert(
+        `Yay! Purchase complete! You will be charged $${total.toFixed(2)}.`
+      );
+    }
+  };
+
+  handleChange = (e) => {
+    const { name, value } = e.target;
+    this.setState({ [name]: value });
+  };
+
+  render() {
+    const { firstName, lastName, email, creditCard, zip } = this.state;
 
     return (
-      <form onSubmit={this.handleSubmit} >
+      <form onSubmit={this.handleSubmit} className="checkout">
         <h2>Checkout</h2>
         <label>
           First Name
