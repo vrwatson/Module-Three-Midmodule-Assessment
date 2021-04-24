@@ -1,1 +1,18 @@
+.garageSale {
+    grid-area: gs;
+}
+.shoppingCart {
+    grid-area: sc;
+}
+.checkout {
+    grid-area: co;
+}
 
+
+body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "gs sc"
+        "gs co";
+}

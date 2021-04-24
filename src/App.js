@@ -29,10 +29,10 @@ class App extends React.Component {
     console.log(tax)
     console.log(total)
     return (
-      <div>
-        <ShoppingCart productInfo={productInfo} tax={tax || 0} subtotal={subtotal || 0} total={total || 0} />
-        <CheckoutForm total={total || 0} />
-        <ProductList productdata={productData} addToShoppingCart={this.addToShoppingCart}/>
+      <div className="app">
+        <ProductList productdata={productData} addToShoppingCart={this.addToShoppingCart} className="garageSale"/>
+        <ShoppingCart productInfo={productInfo} tax={tax || 0} subtotal={subtotal || 0} total={total || 0} className="shoppingCart"/>
+        <CheckoutForm total={total || 0} className="checkout"/>
       </div>
     );
   }

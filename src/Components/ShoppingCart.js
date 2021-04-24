@@ -2,7 +2,7 @@ import React from "react";
 
 const ShoppingCart = ({ productInfo, subtotal, tax, total }) => {
     return (
-        <div>
+        <div >
             <h2>Cart</h2>
             <ul>
             {productInfo.map((product) => {

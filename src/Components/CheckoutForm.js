@@ -32,7 +32,7 @@ export default class CheckoutForm extends Component {
     console.log(this.state);
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} >
         <h2>Checkout</h2>
         <label>
           First Name

@@ -6,7 +6,7 @@ const ProductCard = (props) => {
     const { product, addToShoppingCart } = props;
     
     return(
-        <div>
+        <div className="Product">
             <h3>{product.name}</h3>
             <p>Price: ${product.price.toFixed((2))} </p>
             <button onClick={() => addToShoppingCart({product})}>Add To Cart</button>
